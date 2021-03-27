@@ -1,6 +1,6 @@
-# Date: 21/03/2021
-# Author: AlexxLy
-# Description: Instagram bruteForce
+# Date: 23/03/2021
+# Auteur: AlexxLy
+# Description: Instagram BruteForce
 
 from sys import exit
 from os.path import exists
@@ -24,7 +24,7 @@ class Engine(object):
 
     def passlist_path_exists(self):
         if not exists(self.passlist_path):
-            self.display.warning('Chemin d accès non valide à la liste des mots de passe')
+            self.display.warning('Invalid path to password list')
             return False
         return True
 
@@ -36,7 +36,7 @@ class Engine(object):
         )
 
     def get_user_resp(self):
-        return self.display.prompt('Souhaitez-vous reprendre l attaque? [y / n]: ')
+        return self.display.prompt('Would you like to resume the attack? [y/n]: ')
 
     def write_to_file(self, password):
         with open(credentials, 'at') as f:
@@ -107,7 +107,7 @@ def valid_int(n):
     return n
 
 
-ddef args():
+def args():
     args = ArgumentParser()
     args.add_argument('username', help='email or username')
     args.add_argument('passlist', help='password list')
