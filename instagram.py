@@ -107,10 +107,10 @@ def valid_int(n):
     return n
 
 
-def args():
+ddef args():
     args = ArgumentParser()
-    args.add_argument('Nom', help='Email ou Nom')
-    args.add_argument('List mots de passe', help='Liste de mots de passe')
+    args.add_argument('username', help='email or username')
+    args.add_argument('passlist', help='password list')
     args.add_argument('-nc', '--no-color', dest='color',
                       action='store_true', help='disable colors')
     args.add_argument('-m', '--mode', default=2, type=valid_int,
@@ -121,7 +121,7 @@ def args():
 if __name__ == '__main__':
 
     if int(python_version()[0]) < 3:
-        print('[!] Utiliser Python 3')
+        print('[!] Please use Python 3')
         exit()
 
     arugments = args()
